@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "reset": "dropdb todoApp-db; createdb todoApp-db; psql -f schema.sql todoApp-db; psql -f seed.sql todoApp-db",
+    "reset": "dropdb todoApp-db; createdb todoApp-db; psql -f schema.sql todoApp-db; psql -f seed.sql todoApp-db;  psql todoApp-db < node_modules/connect-pg-simple/table.sql",
     "debug": "node --inspect-brk index.js"
   },
   "keywords": [],
@@ -19,7 +19,6 @@
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "connect-pg-simple": "^5.0.0",
-    "dotenv": "^6.1.0",
     "event-stream": "^3.3.4",
     "express": "^4.16.4",
     "express-session": "^1.15.6",

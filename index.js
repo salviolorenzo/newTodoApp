@@ -6,6 +6,14 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const db = require('./models/db');
 
+// VIEWS
+const page = require('./views/page');
+const helper = require('./views/helper');
+
+// MODELS
+const User = require('./models/User');
+const Todo = require('./models/Todo');
+
 // APP.USE
 app.use(
   session({
@@ -31,7 +39,7 @@ app.use((req, res, next) => {
 // ROUTES
 // Home Page / Login / Register
 app.get('/', (req, res) => {
-  // res.send(//helper functions containing template strings)
+  res.send(page(`ROOT`));
 });
 
 // Post to login / register
@@ -43,4 +51,12 @@ app.post('/login', (req, res) => {
 app.post('/register', (req, res) => {
   // add new user into db
   // define session user
+});
+
+app.get('/home', (req, res) => {
+  res.send(page(`HOME`));
+});
+
+app.listen(3000, () => {
+  console.log(`Ready...`);
 });
