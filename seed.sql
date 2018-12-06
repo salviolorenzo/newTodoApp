@@ -1,8 +1,8 @@
 insert into users
-  (name, email, password)
+  (name, username, email, password)
   values
-  ('lorenzo', 'lorenzo@mail.com', 'password'),
-  ('john', 'john@mail.com', 'password1');
+  ('lorenzo', 'l.salvio', 'lorenzo@mail.com', 'password'),
+  ('john', 'j.ohn', 'john@mail.com', 'password1');
 
 insert into todos
   (name, isCompleted, user_id)
