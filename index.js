@@ -39,18 +39,26 @@ app.use((req, res, next) => {
 // ROUTES
 // Home Page / Login / Register
 app.get('/', (req, res) => {
-  res.send(page(`ROOT`));
+  res.send(
+    page(`
+  ${helper.header(false)}
+  ${helper.login()}
+  ${helper.register()}
+  `)
+  );
 });
 
 // Post to login / register
 app.post('/login', (req, res) => {
   // get user and check password against password in db
   // define session user
+  // redirect to home
 });
 
 app.post('/register', (req, res) => {
   // add new user into db
   // define session user
+  // redirect to home
 });
 
 app.get('/home', (req, res) => {
